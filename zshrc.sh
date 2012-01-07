@@ -1,7 +1,7 @@
 # To install source this file from your .zshrc file
 
 # Change this to reflect your installation directory
-export __GIT_PROMPT_DIR=~/.zsh/git-prompt
+export __GIT_PROMPT_DIR=$Z/git-prompt
 # Initialize colors.
 autoload -U colors
 colors
@@ -39,7 +39,7 @@ function update_current_git_vars() {
     unset __CURRENT_GIT_STATUS
 
     local gitstatus="$__GIT_PROMPT_DIR/gitstatus.py"
-    _GIT_STATUS=`python ${gitstatus}`
+    _GIT_STATUS=`python2 ${gitstatus}`
     __CURRENT_GIT_STATUS=("${(@f)_GIT_STATUS}")
 	GIT_BRANCH=$__CURRENT_GIT_STATUS[1]
 	GIT_REMOTE=$__CURRENT_GIT_STATUS[2]
